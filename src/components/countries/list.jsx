@@ -12,10 +12,17 @@ useEffect(() => {
     }
     getCountries()
 }, [])
-
-return <div>
+return (
+<div style={{display:'flex' , gap: 74 , flexWrap:'wrap'}}>
     {countries.map(country => {
-        return <CountryItem key={country.name.common}/>
+    return<CountryItem 
+    flags={country.flags} 
+    population={country.population}
+    region={country.region}
+    capital={country.capital}
+    name={country.name.common}
+    key={country.name.common}/>  
     })}
 </div>
+)
 }
